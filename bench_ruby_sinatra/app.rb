@@ -12,16 +12,18 @@ get '/fact' do
 end
 
 def client
-  return Thread.current[:db_client] if Thread.current[:db_client]
-  client = Mysql2::Client.new(
-    host: "localhost",
-    username: "root",
-    password: "root",
-    database: "bench",
-    encoding: 'utf8mb4',
-    reconnect: true,
-  )
-  Thread.current[:db_client] = client
+  client = Thread.current[:db_client]
+  return client if client
+
+  Thread.current[:db_client] =
+    Mysql2::Client.new(
+      host: "localhost",
+      username: "root",
+      password: "root",
+      database: "bench",
+      encoding: 'utf8mb4',
+      reconnect: true,
+    )
 end
 
 get '/users/:user_id' do
