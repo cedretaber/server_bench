@@ -4,7 +4,7 @@ import javax.inject.{Inject, Singleton}
 
 import models.User
 import play.api.db.slick.DatabaseConfigProvider
-import slick.driver.JdbcProfile
+import slick.jdbc.JdbcProfile
 
 import scala.concurrent.{ExecutionContext, Future}
 
@@ -14,7 +14,7 @@ class UserRepository @Inject() (dbConfigProvider: DatabaseConfigProvider)(implic
   private val dbConfig = dbConfigProvider.get[JdbcProfile]
 
   import dbConfig._
-  import driver.api._
+  import profile.api._
 
   private class Users(tag: Tag) extends Table[User](tag, "users") {
     def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
