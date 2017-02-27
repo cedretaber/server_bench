@@ -1,0 +1,7 @@
+name "d_vibed"
+description "A sample web server to benchmark."
+authors "cedretaber"
+copyright "Copyright © 2017, cedretaber"
+license "MIT"
+dependency "vibe-d" version="~>0.7.30"
+dependency "mysql-lited" version="~>0.3.15"
