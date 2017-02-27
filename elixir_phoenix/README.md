@@ -15,4 +15,8 @@ $ mix phoenix.server
 ## 使い方（本番）
 
 ```bash
+$ MIX_ENV=prod mix compile
+$ MIX_ENV=prod mix phoenix.digest
+$ MIX_ENV=prod mix phoenix.server
+
 ```

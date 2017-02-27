@@ -13,7 +13,10 @@ defmodule ElixirPhoenix.ApplicationController do
 
   def user(conn, %{ "user_id" => user_id }) do
     case Repo.get(User, user_id) do
-      nil -> put_status conn, :not_found
+      nil ->
+        conn
+        |> put_status(:not_found)
+        |> text("")
       user -> render conn, user: user
     end
   end

@@ -15,5 +15,7 @@ erl_crash.dump
 # variables.
 /config/prod.secret.exs
 
+rel/
+
 .idea
 elixirphoenix.iml
