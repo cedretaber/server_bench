@@ -1,0 +1,7 @@
+{
+  "rbenv": {
+    "versions": ["2.4.0"],
+    "global": "2.4.0",
+    "gems": ["bundler"]
+  }
+}
